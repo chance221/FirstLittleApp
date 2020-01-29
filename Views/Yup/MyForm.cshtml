@@ -1,0 +1,18 @@
+﻿@model FirstLittleApp.KoolModel
+@{
+    ViewBag.Title = "New Cool Kid Form";
+}
+
+<h2>New Kool Kid Form</h2>
+<form name="newKoolKid" method="post">
+    <p>First name: <input type="text" name="firstName" id="firstName" /></p>
+    <p>Last name: <input type="text" name="lastName" id="lastName" /></p>
+    <p>
+        Are you a kool kid?
+        <select name="koolKid" id="koolKid">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </p>
+    <input type="submit" value="Submit Kool Kid" />
+</form>
