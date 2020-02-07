@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Cool Kid List";
+    string[] coolList = { "Johnny Bravo", "Tom Brady", "Mojo JoJo", "Cool Craig", "Tommy Bahama" };
+    int listLen = coolList.Length;
+    var x = 0;
+}
+
+<h2>CoolKidList</h2>
+@for (x = 0; x < listLen; x++)
+{
+    <p>@coolList[x]</p>
+}
+

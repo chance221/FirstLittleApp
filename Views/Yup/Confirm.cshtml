@@ -2,8 +2,15 @@
 @{
     ViewBag.Title = "Confirm";
 }
-
+<img src="~/Content/coolKid.jpg" alt="Photo of cool kid" style="width:25%; outline:5px black solid; outline-offset:10px; float:right; margin-top:2%;" />
 <h2>Kool Kid Confirmation Screen</h2>
-<p>Welcome to the cool crowd</p>
+<h3>Welcome to the cool crowd</h3>
+<p>You have just added the following kool kid info into the kool kid registry</p>
+<p>First Name: @Model.firstName</p>
+<p>Last Name: @Model.lastName</p>
+<p>Is This Guy a Kool kid? @Model.koolKid</p>
+
 <p>@ViewBag.Message</p>
+
+
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FirstLittleApp.Models;
 
 namespace FirstLittleApp.Controllers
 {
@@ -25,7 +26,14 @@ namespace FirstLittleApp.Controllers
         [HttpPost]
         public ActionResult Form(string firstName, string lastName, bool koolKid)
         {
+            KoolModel kid = new KoolModel()
+            {
+                firstName = firstName,
+                lastName = lastName,
+                koolKid = koolKid
+            };
             bool k = koolKid;
+            
             if (k == true)
             {
                 ViewBag.Message = "Name: " + firstName + " " + lastName + " is a cool kid";
@@ -34,7 +42,7 @@ namespace FirstLittleApp.Controllers
             {
                 ViewBag.Message = "Name: " + firstName + " " + lastName + " is sooooo not a cool kid";
             }
-            return View("Confirm");
+            return View("Confirm", kid);
         }
 
         public ActionResult Form()
@@ -42,9 +50,15 @@ namespace FirstLittleApp.Controllers
             return View("MyForm");
         }
 
-        //public ActionResult Confirm()
-        //{
-        //    return View("Confirm");
-        //}
+        public ActionResult Confirm()
+        {
+            return View("Confirm");
+        }
+
+        public ActionResult CoolKidList()
+        {
+            return View();
+        }
+        
     }
 }

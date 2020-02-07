@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Cool Kid Calculator";
+    var totalCoolness = "";
+    if (IsPost)
+    {
+        var cool1 = Request["coolScale"];
+        var coolNum = cool1.AsInt();
+        var age = Request["age"];
+        var ageNum = age.AsInt();
+        int koolFactor = 0;
+        if (ageNum > 50)
+        {
+            totalCoolness = "Sorry you are too old to be a kool kid";
+        }
+        else
+        {
+            koolFactor = coolNum * (68 / ageNum);
+            totalCoolness = "WOW you have a kool factor of " + koolFactor + "! Thats pretty darn kool";
+        }
+
+    }
+}
+
+<h2>Cool Kid Calculator</h2>
+<form action="" method="post">
+    <p>
+        <label for="coolScale">On a Scale of 1 to 10 What is your kool factor?</label><br />
+        <input type="number" max="10" min="1" name="coolScale" />
+    </p>
+    <p>
+        <label for="age">And how old are you?</label> <br/>
+        <input type="number" max="120" min="1" name="age" />
+    </p>
+    <p><input type="submit" value=" Calculate your cool factor "/></p>
+</form>
+<p>@totalCoolness</p>
+

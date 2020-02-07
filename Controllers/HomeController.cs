@@ -26,5 +26,13 @@ namespace FirstLittleApp.Controllers
 
             return View();
         }
+
+        public ActionResult CoolKidCalculator()
+        {
+            ViewBag.Message = "See how cool you truly are!!!";
+            return View();
+        }
+
+
     }
 }
